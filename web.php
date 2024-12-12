@@ -19,9 +19,9 @@ Route::get('/assignment', function () {
     return view('assignment');
 });
 
-Route::get('/title', [TitleController::class,'index']);
+Route::resource('/title',    TitleController::class);
 Route::get('/lecturer', [LecturerController::class,'index']);
-Route::get('/program', [ProgramController::class,'index']);
-Route::get('/tools', [ToolsController::class,'index']);
-Route::get('/project_status', [Project_statusController::class,'index']);
-Route::get('/project_type', [Project_typeController::class,'index']);
+Route::resource('/program', ProgramController::class);
+Route::resource('/tools', ToolsController::class);
+Route::resource('/project_status', Project_statusController::class);
+Route::resource('/project_type', Project_typeController::class);
